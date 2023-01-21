@@ -1,4 +1,6 @@
 import doctest
+
+
 class Medicine:
     def __init__(self, dose_in_one_time: (int, float), times_per_day: int):
         """
@@ -94,7 +96,7 @@ class Party:
         """
         Создание и подготовка к работе объекта "Вечеринка"
         :param max_people: максимально возможное количество человек на вечеринке
-        :param practices: количество пришедших людей
+        :param went_people: количество пришедших людей
         Примеры:
         >>>party = Party(100, 50)
         """
@@ -112,7 +114,7 @@ class Party:
 
     def small_place(self, go_away: int) -> None:
         """
-        Функция, которая показывает, что пришло очень много людей и надо кого-то выгнать
+        Функция, выводит, что пришло очень много людей и надо кого-то выгнать
         :param go_away: количество ушедших людей
         :return: количество ушедших людей
         :raise ValueError: если количество ушедших людей превышает количсетво пришедших людей, то возвращается ошибка.
@@ -135,6 +137,7 @@ class Party:
         >>>party.its_boring()
         """
         ...
+
 
 if __name__ == "__main__":
     doctest.testmod()
