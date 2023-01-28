@@ -22,10 +22,6 @@ class Medicine:
             raise ValueError("Количество приемов препарата в день должно быть неотрицательным числом")
         self.times_per_day = times_per_day
 
-
-    def you_r_very_sick(self, dose_up: (int, float)) -> None:
-        """
-
     def is_sick(self, dose_up: (int, float)) -> None:
         """
         Метод описывает увеличение дозы
@@ -34,7 +30,6 @@ class Medicine:
         :return: дозу принимаемых препаратов
         Примеры:
         >>>meds = Medicine(1.5, 2)
-        >>>meds.you_r_very_sick(0.5)
         >>>meds.is_sick(0.5)
         """
         ...
@@ -73,7 +68,6 @@ class Lessons:
 
     def only_lectures(self) -> bool:
         """
-        Функция, которая показывает, что занятия состоят только из лекций
         Функция, которая проверяет курс на отсутствие практических занятий,
         выводит является ли курс теоретическим
         :return: является ли курс только теоретическим
@@ -83,7 +77,6 @@ class Lessons:
         """
         ...
 
-    def add_practice(self, more_practice: int) -> None:
     def additional_practice(self, more_practice: int) -> None:
         """
         Добавление практик на курсе
@@ -91,7 +84,6 @@ class Lessons:
         :raise ValueError: Если количество добавляемых практик больше количества лекций
         Примеры:
         >>>course = Lessons(15, 7)
-        >>>course.add_practice(7)
         >>>course.additional_practice(7)
         """
         if not isinstance(more_practice, int):
@@ -122,24 +114,6 @@ class Party:
             raise ValueError("Количество пришедших людей должно быть неотрицательным числом")
         self.went_people = went_people
 
-
-    def small_place(self, go_away: int) -> None:
-        """
-        Функция, выводит, что пришло очень много людей и надо кого-то выгнать
-        :param go_away: количество ушедших людей
-        :return: количество ушедших людей
-        :raise ValueError: если количество ушедших людей превышает количсетво пришедших людей, то возвращается ошибка.
-        Примеры:
-        >>> course = Lessons(10, 17)
-        >>> course.small_place(7)
-        """
-        if not isinstance(go_away, int):
-            raise TypeError("Количество ушедших людей должно быть типа int")
-        if go_away < 0:
-            raise ValueError("Количество ушедших людей должно быть неотрицательным числом")
-        ...
-
-    def its_boring(self) -> bool:
     def is_enough_place(self) -> bool:
         """
         Функция которая проверят, достаточно ли места на вечеринке
@@ -164,11 +138,6 @@ class Party:
         :return: не удалась ли вечеринка
         Примеры:
         >>>party = Party(15, 0)
-        >>>party.its_boring()
-        """
-        ...
-
-
         >>>party.is_boring()
         """
         ...
