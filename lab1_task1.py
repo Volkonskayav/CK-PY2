@@ -98,7 +98,7 @@ class Party:
         """
         Создание и подготовка к работе объекта "Вечеринка"
         :param max_people: максимально возможное количество человек на вечеринке
-        :param practices: количество пришедших людей
+        :param went_people: количество пришедших людей
         Примеры:
         >>>party = Party(100, 50)
         """
@@ -114,21 +114,23 @@ class Party:
             raise ValueError("Количество пришедших людей должно быть неотрицательным числом")
         self.went_people = went_people
 
-    def small_place(self, go_away: int) -> None:
+    def is_enough_place(self) -> bool:
         """
-        Функция, которая показывает, что пришло очень много людей и надо кого-то выгнать
-        :param go_away: количество ушедших людей
-        :return: количество ушедших людей
-        :raise ValueError: если количество ушедших людей превышает количсетво пришедших людей, то возвращается ошибка.
+        Функция которая проверят, достаточно ли места на вечеринке
+        :return: Достаточно ли места
         Примеры:
-        >>> course = Lessons(10, 17)
-        >>> course.small_place(7)
+        >>> party = Party(100,50)
+        >>> party.is_enough_place()
         """
-        if not isinstance(go_away, int):
-            raise TypeError("Количество ушедших людей должно быть типа int")
-        if go_away < 0:
-            raise ValueError("Количество ушедших людей должно быть неотрицательным числом")
-        ...
+
+    def need_space(self) -> int:
+        """
+        Функция которая показывает, скольким людям не хватает места
+        :return: скольким людям не хватает места
+        Примеры:
+        >>> party = Party(100,150)
+        >>> party.need_space()
+        """
 
     def is_boring(self) -> bool:
         """
